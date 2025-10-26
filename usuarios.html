@@ -18,6 +18,7 @@
       <label for="email-user">Email do usuário: <br> <input type="email" id="email-user" required
           placeholder="Digite o novo email"> </label>
       <input type="submit" value="Enviar">
+      <input type="button" value="Cancelar" onclick="cancelar()">
     </form>
   </div>
   <header>
@@ -55,8 +56,10 @@
         </table>
       </form>
     </div>
+
+    <h2>Lista de Usuarios cadastrados</h2>
+
     <div id="listagem">
-      <h2>Lista de Usuarios cadastrados</h2>
       <table id="tabela-user">
         <thead id="head-table">
           <tr>
@@ -66,10 +69,13 @@
             <th>Ações</th>
           </tr>
         </thead>
-        <tbody id="tabela-usuarios"></tbody>
+        <tbody id="tabela-usuarios">
+
+        </tbody>
       </table>
-      <input type="button" value="resetar" onclick="resetar()" id="bt-reset">
+
     </div>
+    <input type="button" value="resetar" onclick="resetar()" id="bt-reset">
   </main>
   <footer>
     <p>Felipe Ortega da Silva GU3052664</p>

@@ -2,6 +2,10 @@ let tabela_jogador = document.getElementById("tabela-usuarios");
 const form_user = document.getElementById("form-usuario");
 const overlay = document.getElementById("overlay");
 const caixa_form = document.getElementById("prompt");
+function cancelar() {
+  overlay.style.display = "none";
+  caixa_form.style.display = "none"
+}
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 function deletar(i) {
   usuarios.splice(i, 1);
@@ -33,7 +37,13 @@ function exibir_users() {
   tabela_jogador.innerHTML = "";
   for (let i = 0; i < usuarios.length; i++) {
     let linha = document.createElement("tr");
-    linha.innerHTML = `<td>${[i]}</td> <td>${usuarios[i].nome}</td> <td> ${usuarios[i].email}</td> <td class='td-botoes'> </td>`;
+    linha.innerHTML = ` 
+<tr>
+      <td>${i}</td>
+      <td>${usuarios[i].nome}</td>
+    <td> ${usuarios[i].email}</td>
+    <td class='td-botoes'></td>
+</tr>`;
     tabela_jogador.appendChild(linha);
     let excluir = document.createElement("input");
     excluir.type = "button";
