@@ -2,11 +2,11 @@ let tabela_jogador = document.getElementById("tabela-usuarios");
 const form_user = document.getElementById("form-usuario");
 const overlay = document.getElementById("overlay");
 const caixa_form = document.getElementById("prompt");
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 function cancelar() {
   overlay.style.display = "none";
   caixa_form.style.display = "none"
 }
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 function deletar(i) {
   usuarios.splice(i, 1);
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -19,7 +19,8 @@ function mostrar_prompt(i) {
   caixa_form.style.justifyContent = "space-between";
   caixa_form.style.alignItems = "center";
   caixa_form.style.gap = "10px"
-  caixa_form.addEventListener("submit", function() {
+  caixa_form.addEventListener("submit", function(x) {
+    x.preventDefault();
     let caixa_nome = document.getElementById("nome-user").value;
     let caixa_email = document.getElementById("email-user").value;
     if (caixa_nome.trim() != '' && caixa_email.trim() != '') {
@@ -34,25 +35,19 @@ function mostrar_prompt(i) {
 
 }
 function exibir_users() {
+  document.getElementById("qtde-usuarios").innerText = `Quantidade usuários cadastrados:${usuarios.length}`;
+
   tabela_jogador.innerHTML = "";
   for (let i = 0; i < usuarios.length; i++) {
     let linha = document.createElement("tr");
-    linha.innerHTML = ` 
-<tr>
-      <td>${i}</td>
-      <td>${usuarios[i].nome}</td>
-    <td> ${usuarios[i].email}</td>
-    <td class='td-botoes'></td>
-</tr>`;
+    linha.innerHTML = ` <tr> <td>${i}</td> <td>${usuarios[i].nome}</td> <td> ${usuarios[i].email}</td> <td class='td-botoes'></td></tr>`;
     tabela_jogador.appendChild(linha);
     let excluir = document.createElement("input");
     excluir.type = "button";
     excluir.id = `excluir${i}`;
     excluir.value = "Excluir";
     excluir.classList.add("bt-excluir");
-    excluir.onclick = function() {
-      deletar(i);
-    };
+    excluir.onclick = () => deletar(i);
     document.getElementsByClassName("td-botoes")[i].appendChild(excluir);
     let editar = document.createElement("input");
     editar.type = "button";
