@@ -13,16 +13,16 @@
   <div id="overlay">
     <form id="prompt" action="" method="GET">
       <h2>Modo edição</h2>
-      <label for="nome-user">Nome do usuário: <br> <input type="text" id="nome-user" required
-          placeholder="Digite o novo nome"></label>
-      <label for="email-user">Email do usuário: <br> <input type="email" id="email-user" required
+      <label for="nome-user">Nome do usuário: <br><input type="text" id="nome-user" required
+          placeholder="Digite o novo nome"></label> <br>
+      <label for="email-user">Email do usuário: <br><input type="email" id="email-user" required
           placeholder="Digite o novo email"> </label>
       <input type="submit" value="Enviar">
       <input type="button" value="Cancelar" onclick="cancelar()">
     </form>
   </div>
   <header>
-    <img src="./images/vatican.png" alt="Simbolo do vaticano">
+    <img src="./images/vatican.png" alt="Simbolo do vaticano" id="vaticano">
     <h1>Cadastro de usuários</h1>
     <nav>
       <a href="">Usuários</a>
@@ -57,12 +57,11 @@
         </table>
       </form>
     </div>
-
     <h2>Lista de Usuarios cadastrados</h2>
     <h3 id="qtde-usuarios"></h3>
     <div id="listagem">
       <table id="tabela-user">
-        <thead id="head-table">
+        <thead id="header-table">
           <tr>
             <th>Posição</th>
             <th>Nome</th>
@@ -74,13 +73,9 @@
 
         </tbody>
       </table>
-
     </div>
-    <input type="button" value="resetar" onclick="resetar()" id="bt-reset">
+    <input type="button" value="Resetar" onclick="resetar()" id="bt-reset">
   </main>
-  <footer>
-    <p>Felipe Ortega da Silva GU3052664</p>
-  </footer>
   <script src="./js/script.js"></script>
 </body>
 

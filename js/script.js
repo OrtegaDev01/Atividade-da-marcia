@@ -44,14 +44,12 @@ function exibir_users() {
     tabela_jogador.appendChild(linha);
     let excluir = document.createElement("input");
     excluir.type = "button";
-    excluir.id = `excluir${i}`;
     excluir.value = "Excluir";
     excluir.classList.add("bt-excluir");
     excluir.onclick = () => deletar(i);
     document.getElementsByClassName("td-botoes")[i].appendChild(excluir);
     let editar = document.createElement("input");
     editar.type = "button";
-    editar.id = `editar${i}`;
     editar.value = "Editar";
     editar.classList.add("bt-editar");
     editar.onclick = () => mostrar_prompt(i);
@@ -73,3 +71,6 @@ function resetar() {
   localStorage.clear();
   window.location.reload();
 }
+document.getElementById("vaticano").addEventListener("click", function() {
+  window.location.href = "https://www.vatican.va/content/vatican/pt.html"
+})
