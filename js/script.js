@@ -7,13 +7,17 @@ function exibir_users() {
   tabela_jogador.replaceChildren()
   for (let i = 0; i < usuarios.length; i++) {
     let linha = document.createElement("tr");
-    linha.innerHTML = ` <tr> <td>${i}</td> <td>${usuarios[i].nome}</td> <td> ${usuarios[i].email}</td> <td class='td-botoes'> <input type='button' class='bt-excluir' value = 'Excluir'><input type = 'button' class='bt-editar' value='Editar'></td></tr>`;
+    linha.innerHTML = ` 
+  <td>${i}</td> 
+  <td>${usuarios[i].nome}</td> 
+  <td> ${usuarios[i].email}</td> 
+  <td class='td-botoes'> 
+    <input type='button' class='bt-excluir' value = 'Excluir'>
+    <input type = 'button' class='bt-editar' value='Editar'>
+  </td>
+`;
     tabela_jogador.appendChild(linha)
-    document.getElementsByClassName('bt-excluir')[i].onclick = () => {
-      usuarios.splice(i, 1);
-      localStorage.setItem("usuarios", JSON.stringify(usuarios));
-      window.location.reload();
-    }
+    document.getElementsByClassName('bt-excluir')[i].onclick = () => { usuarios.splice(i, 1); localStorage.setItem("usuarios", JSON.stringify(usuarios)); window.location.reload(); }
     document.getElementsByClassName('bt-editar')[i].onclick = () => {
       overlay.style.display = "block";
       caixa_form.style.display = "flex";
@@ -42,7 +46,7 @@ document.getElementById("form-usuario").addEventListener("submit", evento => {
   let nome = document.getElementById("nome_usuario").value;
   let email = document.getElementById("email_usuario").value
   usuarios.push({ nome, email })
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  // localStorage.setItem("usuarios", JSON.stringify(usuarios));
   exibir_users();
 });
 document.addEventListener("DOMContentLoaded", exibir_users())
