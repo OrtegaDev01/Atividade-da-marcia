@@ -14,21 +14,13 @@ input[type="email"] {
   width: max-content;
 }
 
-footer {
-  background-color: #c8cc00;
-  height: 15vh;
-  display: flex;
-  justify-content: center;
-}
-
 main {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   background-color: #DEDEDE;
-  ;
-  height: 40rem;
+  height: 100vh;
 }
 
 header {
@@ -63,7 +55,6 @@ thead {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: -30px;
   max-height: 20%;
   overflow-y: scroll;
   border-radius: 6px;
@@ -74,7 +65,7 @@ thead {
 
 img {
   width: 18ch;
-  height: 18vh;
+  height: 19vh;
 
 }
 
@@ -137,4 +128,13 @@ a {
   width: 100%;
   margin-top: 10px;
   padding: 5px;
+}
+
+#formulario {
+  border: solid 3px;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

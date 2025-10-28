@@ -3,7 +3,7 @@ const overlay = document.getElementById("overlay");
 const caixa_form = document.getElementById("prompt");
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 function exibir_users() {
-  document.getElementById("qtde-usuarios").innerText = `Quantidade usuários cadastrados: ${usuarios.length === null || usuarios.length === undefined ? "Não nenhum usuário" : usuarios.length}`;
+  document.getElementById("qtde-usuarios").innerText = `Quantidade usuários cadastrados: ${usuarios.length === null || usuarios.length === undefined ? "Não há nenhum usuário" : usuarios.length}`;
   tabela_jogador.replaceChildren()
   for (let i = 0; i < usuarios.length; i++) {
     let linha = document.createElement("tr");
