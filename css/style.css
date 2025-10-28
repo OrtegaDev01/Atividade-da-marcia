@@ -10,13 +10,12 @@ input[type="email"] {
   width: 200px;
 }
 
-
 #bt-reset {
   width: max-content;
 }
 
 footer {
-  background-color: yellow;
+  background-color: #c8cc00;
   height: 15vh;
   display: flex;
   justify-content: center;
@@ -27,15 +26,17 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: white;
+  background-color: #DEDEDE;
+  ;
   height: 40rem;
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  background-color: yellow;
-  height: 10vh;
+  align-items: center;
+  background-color: #F5E427;
+  height: max-content;
 }
 
 #tabela-user {
@@ -43,14 +44,10 @@ header {
   border-radius: 5px 5px 0px 0px;
   text-align: center;
   width: 100%;
-  background-color: white;
+  background-color: #DEDEDE;
+  ;
   border-collapse: collapse;
   overflow: hidden;
-}
-
-::-webkit-scrollbar-thumb {
-
-  background-color: transparent;
 }
 
 #tabela-user td,
@@ -59,9 +56,8 @@ header {
 }
 
 thead {
-  background-color: yellow;
+  background-color: #F5E427;
 }
-
 
 #listagem {
   display: flex;
@@ -77,15 +73,15 @@ thead {
 }
 
 img {
-  width: 5vw;
-  height: 10vh;
+  width: 18ch;
+  height: 18vh;
+
 }
 
 .bt-editar {
   background-color: bisque;
   border: black 1px 4px;
   border-radius: 4px;
-
 }
 
 a {
@@ -123,7 +119,7 @@ a {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: #DEDEDE;
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
   /* color: #f0; */
@@ -131,11 +127,10 @@ a {
   padding: 20px;
   border-radius: 10px;
   font-family: monospace;
-  box-shadow: 0 0 20px yellow;
+  box-shadow: 0 0 20px #F5E427;
   z-index: 1000;
   font-size: 1rem;
 }
-
 
 #nome-user,
 #email-user {
