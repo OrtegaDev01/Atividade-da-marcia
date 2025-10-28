@@ -53,3 +53,4 @@ document.addEventListener("DOMContentLoaded", exibir_users())
 document.getElementById("vaticano").addEventListener("click", () => { window.location.href = "https://www.vatican.va/content/vatican/pt.html" });
 document.getElementById("cancelar").addEventListener("click", () => { overlay.style.display = "none"; caixa_form.style.display = "none"; });
 document.getElementById("bt-reset").addEventListener("click", () => { localStorage.clear(); window.location.reload(); });
+console.log("khhebhbderhejrhbeff")
