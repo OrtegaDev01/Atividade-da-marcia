@@ -13,11 +13,7 @@ function exibir_users() {
     excluir.type = "button";
     excluir.value = "Excluir";
     excluir.classList.add("bt-excluir");
-    excluir.onclick = (i) => {
-      usuarios.splice(i, 1);
-      localStorage.setItem("usuarios", JSON.stringify(usuarios))
-      window.location.reload();
-    }
+    excluir.onclick = () => { usuarios.splice(i, 1); localStorage.setItem("usuarios", JSON.stringify(usuarios)); window.location.reload(); }
     let editar = document.createElement("input");
     editar.type = "button";
     editar.value = "Editar";
@@ -45,26 +41,15 @@ function exibir_users() {
     document.getElementsByClassName("td-botoes")[i].appendChild(excluir);
     document.getElementsByClassName("td-botoes")[i].appendChild(editar);
   }
-}
+};
 document.getElementById("form-usuario").addEventListener("submit", (evento) => {
   evento.preventDefault();
   let nome = document.getElementById("nome_usuario").value;
   let email = document.getElementById("email_usuario").value;
-  usuarios.push({ nome, email });
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  localStorage.setItem("usuarios", JSON.stringify(usuarios.push({ nome, email })))
   exibir_users();
 });
-document.addEventListener("DOMContentLoaded", () => {
-  exibir_users();
-});
-document.getElementById("vaticano").addEventListener("click", () => {
-  window.location.href = "https://www.vatican.va/content/vatican/pt.html"
-})
-document.getElementById("cancelar").addEventListener("click", () => {
-  overlay.style.display = "none";
-  caixa_form.style.display = "none";
-})
-document.getElementById("bt-reset").addEventListener("click", () => {
-  localStorage.clear();
-  window.location.reload();
-})
+document.addEventListener("DOMContentLoaded", exibir_users())
+document.getElementById("vaticano").addEventListener("click", () => { window.location.href = "https://www.vatican.va/content/vatican/pt.html" });
+document.getElementById("cancelar").addEventListener("click", () => { overlay.style.display = "none"; caixa_form.style.display = "none"; });
+document.getElementById("bt-reset").addEventListener("click", () => { localStorage.clear(); window.location.reload(); });
