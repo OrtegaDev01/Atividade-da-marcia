@@ -6,18 +6,14 @@ function exibir_users() {
   document.getElementById("qtde-usuarios").innerText = `Quantidade usuários cadastrados: ${usuarios.length === null || usuarios.length === undefined ? "Não há nenhum usuário" : usuarios.length}`;
   tabela_jogador.replaceChildren()
   for (let i = 0; i < usuarios.length; i++) {
-    let linha = document.createElement("tr");
-    linha.innerHTML = ` 
-  <td>${i}</td> 
-  <td>${usuarios[i].nome}</td> 
-  <td> ${usuarios[i].email}</td> 
-  <td class='td-botoes'> 
-    <input type='button' class='bt-excluir' value = 'Excluir'>
-    <input type = 'button' class='bt-editar' value='Editar'>
-  </td>
-`;
+    let linha = document.createElement("tr")
+    linha.innerHTML = ` <td>${i}</td> <td>${usuarios[i].nome}</td> <td> ${usuarios[i].email}</td> <td class='td-botoes'> <input type='button' class='bt-excluir' value = 'Excluir'><input type = 'button' class='bt-editar' value='Editar'></td>`;
     tabela_jogador.appendChild(linha)
-    document.getElementsByClassName('bt-excluir')[i].onclick = () => { usuarios.splice(i, 1); localStorage.setItem("usuarios", JSON.stringify(usuarios)); window.location.reload(); }
+    document.getElementsByClassName('bt-excluir')[i].onclick = () => {
+      usuarios.splice(i, 1);
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      window.location.reload();
+    }
     document.getElementsByClassName('bt-editar')[i].onclick = () => {
       overlay.style.display = "block";
       caixa_form.style.display = "flex";
@@ -29,13 +25,11 @@ function exibir_users() {
         change.preventDefault();
         let caixa_nome = document.getElementById("nome-user").value;
         let caixa_email = document.getElementById("email-user").value;
-        if (caixa_nome.trim() != '' && caixa_email.trim() != '') {
-          usuarios[i].nome = caixa_nome;
-          usuarios[i].email = caixa_email;
-          localStorage.setItem("usuarios", JSON.stringify(usuarios))
-          overlay.style.display = "none";
-          caixa_form.style.display = "none";
-        }
+        usuarios[i].nome = caixa_nome;
+        usuarios[i].email = caixa_email;
+        localStorage.setItem("usuarios", JSON.stringify(usuarios))
+        overlay.style.display = "none";
+        caixa_form.style.display = "none";
         window.location.reload();
       })
     };
@@ -46,7 +40,7 @@ document.getElementById("form-usuario").addEventListener("submit", evento => {
   let nome = document.getElementById("nome_usuario").value;
   let email = document.getElementById("email_usuario").value
   usuarios.push({ nome, email })
-  // localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
   exibir_users();
 });
 document.addEventListener("DOMContentLoaded", exibir_users())
