@@ -39,8 +39,7 @@ document.getElementById("form-usuario").addEventListener("submit", evento => {
   evento.preventDefault();
   let nome = document.getElementById("nome_usuario").value;
   let email = document.getElementById("email_usuario").value
-  usuarios.push({ nome, email })
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  usuarios.push({ nome, email }), localStorage.setItem("usuarios", JSON.stringify(usuarios));
   exibir_users();
 });
 document.addEventListener("DOMContentLoaded", exibir_users())
