@@ -19,7 +19,7 @@ main {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #DEDEDE;
+  background-color: #dedede;
   height: 100vh;
 }
 
@@ -27,7 +27,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F5E427;
+  background-color: #f5e427;
   height: max-content;
 }
 
@@ -36,7 +36,7 @@ header {
   border-radius: 5px 5px 0px 0px;
   text-align: center;
   width: 100%;
-  background-color: #DEDEDE;
+  background-color: #dedede;
   border-collapse: collapse;
   overflow: hidden;
 }
@@ -47,7 +47,7 @@ header {
 }
 
 thead {
-  background-color: #F5E427;
+  background-color: #f5e427;
 }
 
 #listagem {
@@ -65,7 +65,6 @@ thead {
 img {
   width: 18ch;
   height: 19vh;
-
 }
 
 .bt-editar {
@@ -109,7 +108,7 @@ a {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: #DEDEDE;
+  background-color: #dedede;
   -webkit-text-stroke-width: 0.2px;
   -webkit-text-stroke-color: black;
   /* color: #f0; */
@@ -117,7 +116,7 @@ a {
   padding: 20px;
   border-radius: 10px;
   font-family: monospace;
-  box-shadow: 0 0 20px #F5E427;
+  box-shadow: 0 0 20px #f5e427;
   z-index: 1000;
   font-size: 1rem;
 }
@@ -136,4 +135,27 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#login-corpo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+}
+
+fieldset {
+  border-radius: 20px;
+  background-color: aliceblue;
+  z-index: 200;
+  text-align: center;
+}
+
+#nome-login,
+#email-login {
+  width: 100%;
 }
