@@ -1,33 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
     <link href="css/style.css" rel="stylesheet" />
-  </head>
+</head>
 
-  <body id="login-corpo">
+<body id="login-corpo">
     <div id="overlay-login"></div>
     <div id="prompt-login">
-      <form action="" id="form-login">
-        <fieldset>
-          <legend>Login</legend>
-          <label for="nome-login">
-            Nome <br />
-            <input type="text" id="nome-login" required />
-          </label>
-          <br />
-          <label for="email-login">
-            Email <br />
-            <input type="senha" id="email-login" required />
-          </label>
-          <br />
-          <input type="submit" value="Enviar" />
-          <input type="button" value="Cancelar" id="login-cancelar" />
-        </fieldset>
-      </form>
+        <form action="" id="form-login">
+            <fieldset>
+                <legend>Login</legend>
+                <label for="nome-login">
+                    Nome <br />
+                    <input type="text" id="nome-login" required />
+                </label>
+                <br />
+                <label for="email-login">
+                    Email <br />
+                    <input type="senha" id="email-login" required />
+                </label>
+                <br />
+                <input type="submit" value="Enviar" />
+                <input type="button" value="Cancelar" id="login-cancelar">
+                <p id="tentativas"></p>
+            </fieldset>
+        </form>
     </div>
     <script type="text/javascript" src="js/login.js"></script>
-  </body>
+</body>
+
 </html>

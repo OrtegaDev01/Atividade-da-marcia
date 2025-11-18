@@ -2,13 +2,62 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link href="css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+
+
+
 </head>
 
 <body>
+
+    <div id="overlay">
+        <form id="prompt" action="" method="GET">
+            <fieldset>
+                <legend>Modo edição</legend>
+
+                <label for="nome_cadastro_novo">Nome do usuário:
+                    <input type=" text" id="nome-user" required placeholder="Digite o novo nome" /></label>
+                <label for="email_cadastro_novo">Email do usuário:<input type="email" id="email-user" required
+                        placeholder="Digite o novo email" />
+                </label>
+                <input type="submit" value="Enviar" />
+
+                <input type="button" value="Cancelar" id="cancelar" />
+            </fieldset>
+        </form>
+    </div>
+
+
+
+    <main>
+        <form method="POST" id="formulario_cadaastro" action="">
+            <label for="nome_cadastro">
+                Nome: <br /> <input type="text" id="nome_cadastro" required>
+            </label> <br />
+            <label for="email_cadastro"> Email:
+                <br /> <input type="email" id="email_cadastro" required>
+            </label> <br>
+            <label for="cidade_cadastro"> cidade: <br />
+                <input type="text" id="cidade_cadastro" required>
+            </label> <br />
+            <label for="data_nascimento">
+                Data de nascimento: <br />
+                <input type="data-nascimento" id="data_nascimento" required> </label> <br />
+            <label for="idade_cadastro"> Idade: <br /> <input type="text" id="idade_cadastro" readonly> <br />
+            </label>
+            <input type="submit" value="Enviar" />
+        </form>
+
+
+    </main>
+<script type="text/javascript" src="./js/flatpickr.js">
+</script>
 </body>
 
 </html>
