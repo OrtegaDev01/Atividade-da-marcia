@@ -38,7 +38,6 @@ function exibir_users() {
         };
     }
 }
-
 document.getElementById("form-usuario").addEventListener("submit", (evento) => {
     evento.preventDefault();
     let nome = document.getElementById("nome_usuario").value;

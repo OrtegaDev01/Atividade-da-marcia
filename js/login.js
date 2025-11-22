@@ -9,11 +9,7 @@ document.getElementById("form-login").addEventListener("submit", (click) => {
     click.preventDefault();
     let nome = document.getElementById("login-nome");
     let email = document.getElementById("login-email");
-    if (
-        usuarios.find(
-            (usuario) => usuario.nome == nome && usuario.email == email,
-        )
-    ) {
+    if (usuarios.find((usuario) => usuario.nome == nome && usuario.email == email)) {
         tentativas -= 1;
         window.location.href = "clientes.html";
     } else {
@@ -24,6 +20,4 @@ document.getElementById("form-login").addEventListener("submit", (click) => {
         }
     }
 });
-
-document.getElementById("login-cancelar").onclick = () =>
-    (window.location.href = "usuarios.html");
+document.getElementById("login-cancelar").onclick = () => window.location.href = "usuarios.html";
